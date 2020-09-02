@@ -2,27 +2,30 @@ package com.crowdar.examples.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 
-public class GoogleHomePage extends PageBaseShop {
+public class ShopHomePage extends PageBaseShop {
 
-    private final String INPUT_SEARCH_XPATH = "//input[@class='gLFyf gsfi']";
-    private final String SEARCH_BUTTON_NAME = "btnK";
 
-    public GoogleHomePage(RemoteWebDriver driver) {
+
+    public ShopHomePage(RemoteWebDriver driver) {
         super(driver);
-        this.url = ""; //here you can define the custom paths For example:"/search" --> www.googe.com/search
+        this.url = "";
     }
+
+    private final String BUTTON_SIGNIN_CSS_SELECTOR = "#header > div.nav > div > div > nav > div.header_user_info > a";
+    private final String HOME_ELEMENT_CSS_SELECTOR ="#home-page-tabs > li.active > a";
 
     public void go() {
         navigateToCompleteURL();
     }
 
-    public void enterSearchCriteria(String text) {
-        completeField(By.xpath(INPUT_SEARCH_XPATH), text);
+    public void clickSinginButton(){
+        clickElement(By.cssSelector(BUTTON_SIGNIN_CSS_SELECTOR));
     }
 
-    public void clickSearchButton() {
-        clickElement(By.name(SEARCH_BUTTON_NAME));
+    public void verifyHome(){
+        Assert.assertTrue(isElementVisible(By.cssSelector(HOME_ELEMENT_CSS_SELECTOR)),"El elemenot no es visible");
     }
 
 }

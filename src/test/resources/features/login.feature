@@ -2,7 +2,7 @@ Feature: Como cliente, quiero eingresar las credenciales de mi cuenta, para ingr
 
   @Login
    Scenario: El cliente inicia sesión en el sito de comptas
-    Given e l cliente se encuentra en la pagina de home
+    Given el cliente se encuentra en la pagina de home
     When el cliente hace click en el boton Sign in
     Then el cliente verifica que fué redireccionado a la pantalla de login
 
