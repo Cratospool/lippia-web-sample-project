@@ -33,13 +33,19 @@ public class ShopHomePage extends PageBaseShop {
         clickElement(By.cssSelector(BUTTON_SIGNIN_CSS_SELECTOR));
     }
 
-    public void verifyHome(){
-        Assert.assertTrue(isElementVisible(By.cssSelector(TITLE_H3_CSS_SELECTOR)),"El elemenot no es visible");
-    }
-
     public void clickSinginGreenButton(){
         clickElement(By.xpath(BUTTON_SIGNIN_GREEN_XPATH));
     }
+
+    public void verifyHomePage(){
+        Assert.assertTrue(isElementVisible(By.cssSelector(TITLE_H3_CSS_SELECTOR)),"El elemento no es visible");
+    }
+
+    public void verifyNyAccountPage(){
+        Assert.assertTrue(isElementVisible(By.cssSelector(TITLE_H1_CSS_SELECTOR)),"El elemento no es visible");
+    }
+
+
     public void setTextEmailBox(){
         WebElement input = driver.findElement(By.cssSelector(EMAIL_BOX_CSS_SELECTOR));
         input.clear();
@@ -51,12 +57,8 @@ public class ShopHomePage extends PageBaseShop {
         input.sendKeys("asd123");
     }
 
-    public void verifyHomePage(){
-        Assert.assertTrue(isElementVisible(By.cssSelector(TITLE_H3_CSS_SELECTOR)),"El elemento no es visible");
-    }
-    public void verifyNyAccountPage(){
-        Assert.assertTrue(isElementVisible(By.cssSelector(TITLE_H1_CSS_SELECTOR)),"El elemento no es visible");
-    }
+
+
 
 
 }

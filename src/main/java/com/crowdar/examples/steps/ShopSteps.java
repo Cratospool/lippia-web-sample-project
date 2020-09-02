@@ -19,7 +19,7 @@ public class ShopSteps extends PageSteps {
 
     @Then("el cliente verifica que fué redireccionado a la pantalla de login")
     public void elClienteVerificaQueFuéRedireccionadoALaPantallaDeLogin() {
-        Injector._page(ShopHomePage.class).verifyHome();
+        Injector._page(ShopHomePage.class).verifyHomePage();
     }
 
     @When("el cliente ingresa su emal: luisjivillalba@gmail.com")
