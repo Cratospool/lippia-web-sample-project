@@ -1,13 +1,13 @@
 Feature: Como cliente, quiero eingresar las credenciales de mi cuenta, para ingresar al sitio de compras
 
   @Login
-   Scenario: El cliente inicia sesión en el sito de comptas
+   Scenario: El cliente inicia sesión en el sito de compras
     Given el cliente se encuentra en la pagina de home
     When el cliente hace click en el boton Sign in
     Then el cliente verifica que fué redireccionado a la pantalla de login
 
     When el cliente ingresa su emal: luisjivillalba@gmail.com
     And el cliente ingresa su password: asd123
-    And el cliente hace click en el boton Sign in
+    And el cliente hace click en el boton Sign in verde
     Then el cliente verifica que fué redireccionado a la pantalla de My Account
 

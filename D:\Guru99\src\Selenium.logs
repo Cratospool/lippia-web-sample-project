@@ -1,0 +1,2 @@
+16:43:24,422  INFO com.crowdar.bdd.cukes.hooks.BasicHook<strong>{1}</strong>:20 - ------ Starting -----El cliente inicia sesión en el sito de compras-----
+16:43:35,902  INFO com.crowdar.bdd.cukes.hooks.BasicHook<strong>{1}</strong>:35 - ------ Ending -----El cliente inicia sesión en el sito de compras-----
