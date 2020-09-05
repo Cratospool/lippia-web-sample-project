@@ -7,40 +7,35 @@ import io.cucumber.java.en.*;
 
 public class ShopSteps extends PageSteps {
 
-    @Given("el cliente se encuentra en la pagina de home")
-    public void elCllienteSeEncuentraEnLaPaginaDeHome(){
+    @Given("el cliente se encuentra en la pagina home")
+    public void elCllienteSeEncuentraEnLaPaginaHome(){
         Injector._page(ShopHomePage.class).go();
     }
 
-    @When("el cliente hace click en el boton Sign in")
-    public void elClienteHaceClickEnElBotonSignIn() {
-        Injector._page(ShopHomePage.class).clickSignInButton();
+    @When("el cliente hace click en el boton (.*)")
+    public void elClienteHaceClickEnElBoton (String button) {
+        Injector._page(ShopHomePage.class).clickButton(button);
     }
 
-    @Then("el cliente verifica que fué redireccionado a la pantalla de login")
-    public void elClienteVerificaQueFuéRedireccionadoALaPantallaDeLogin() {
-        Injector._page(ShopHomePage.class).verifyHomePage();
-    }
-
-    @When("el cliente ingresa su emal: luisjivillalba@gmail.com")
-    public void elClienteIngresaSuEmalLuisjivillalbaGmailCom() {
-        Injector._page(ShopHomePage.class).setTextEmailBox();
-    }
-
-    @And("el cliente ingresa su password: asd123")
-    public void elClienteIngresaSuPasswordAsd() {
-        Injector._page(ShopHomePage.class).setTextPasswordBox();
-    }
-
-    @And("el cliente hace click en el boton Sign in verde")
-    public void elClienteHaceClickEnElBotonSignInVerde() {
-        Injector._page(ShopHomePage.class).clickSinginGreenButton();
-    }
-
-    @Then("el cliente verifica que fué redireccionado a la pantalla de My Account")
-    public void elClienteVerificaQueFuéRedireccionadoALaPantallaDeMyAccount() {
+    @Then("el cliente verifica que fué redireccionado a la pantalla (.*)")
+    public void elClienteVerificaQueFuéRedireccionadoALaPantallaD(String pantalla) {
+        Injector._page(ShopHomePage.class).redirectScreen(pantalla);
 
     }
+
+    @When("el cliente ingresa su emal: (.*)")
+    public void elClienteIngresaSuEmalLuisjivillalbaGmailCom(String email) {
+        Injector._page(ShopHomePage.class).setTextEmailBox(email);
+    }
+
+    @And("el cliente ingresa su password: (.*)")
+    public void elClienteIngresaSuPasswordAsd(String pass) {
+        Injector._page(ShopHomePage.class).setTextPasswordBox(pass);
+    }
+
+
+
+
 
 
 
